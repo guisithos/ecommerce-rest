@@ -1,0 +1,154 @@
+{
+	"info": {
+		"_postman_id": "7e48e53c-033b-44e9-af2a-9cdc8e33abec",
+		"name": "ecommerce-rest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15644990"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "[CREATE] /wines",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"Name\": \"Cabernet Sauvignon 2018\",\n\"Description\": \"Rich red wine with blackcurrant notes\",\n\"Price\": 49.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/wines",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"wines"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[READ] /wines/get/{id}",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/wines/get/69",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"wines",
+								"get",
+								"69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[UPDATE] /wines/update{id}",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\"Name\": \"Cabernet Sauvignon 2018\",\n\"Description\": \"Rich red wine with blackcurrant notes\",\n\"Price\": 54.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/wines/update/69",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"wines",
+								"update",
+								"69"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[LIST] /wines/all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/wines/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"wines",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "[DELETE] /wines/delete/{id}",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/wines/delete/69",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"wines",
+								"delete",
+								"69"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "[HEALTH] /health",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/health",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

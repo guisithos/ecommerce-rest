@@ -5,6 +5,8 @@ import (
 	"log"
 	"net/http"
 	"os"
+
+	"github.com/guisithos/ecommerce-rest/internals/models"
 )
 
 type config struct {
