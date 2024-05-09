@@ -42,7 +42,7 @@ func (app *application) CreateProduct(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.errorLog.Println(err)
 		payload.Error = true
-		payload.Message = "invalid json supplied, or json missing entirely"
+		payload.Message = "Invalid JSON"
 		_ = app.writeJSON(w, http.StatusBadRequest, payload)
 	}
 
@@ -60,7 +60,7 @@ func (app *application) CreateProduct(w http.ResponseWriter, r *http.Request) {
 
 	payload = jsonResponse{
 		Error:   false,
-		Message: "Product successfully created",
+		Message: "Product created",
 		Data:    envelope{"product": product.Name},
 	}
 
@@ -89,7 +89,7 @@ func (app *application) GetProduct(w http.ResponseWriter, r *http.Request) {
 
 	payload := jsonResponse{
 		Error:   false,
-		Message: "Product successfully obtained",
+		Message: "Product obtained",
 		Data:    envelope{"product": productResponse},
 	}
 
@@ -106,7 +106,7 @@ func (app *application) UpdateProduct(w http.ResponseWriter, r *http.Request) {
 	if err != nil {
 		app.errorLog.Println(err)
 		payload.Error = true
-		payload.Message = "invalid json supplied, or json missing entirely"
+		payload.Message = "Invalid JSON"
 		_ = app.writeJSON(w, http.StatusBadRequest, payload)
 	}
 
@@ -138,7 +138,7 @@ func (app *application) UpdateProduct(w http.ResponseWriter, r *http.Request) {
 
 	payload = jsonResponse{
 		Error:   false,
-		Message: "Product successfully updated",
+		Message: "Product updated",
 		Data:    envelope{"product": product.Name},
 	}
 
@@ -156,7 +156,7 @@ func (app *application) AllProducts(w http.ResponseWriter, r *http.Request) {
 
 	payload := jsonResponse{
 		Error:   false,
-		Message: "Data successfully obtained",
+		Message: "Data obtained",
 		Data:    envelope{"products": all},
 	}
 
@@ -178,7 +178,7 @@ func (app *application) DeleteProduct(w http.ResponseWriter, r *http.Request) {
 
 	payload := jsonResponse{
 		Error:   false,
-		Message: "Product successfully deleted",
+		Message: "Product deleted",
 	}
 
 	_ = app.writeJSON(w, http.StatusOK, payload)
