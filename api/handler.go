@@ -1,4 +1,4 @@
-package main
+package api
 
 import (
 	"net/http"
@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/go-chi/chi"
+	"github.com/guisithos/ecommerce-rest/internals/models"
 )
 
 type jsonResponse struct {

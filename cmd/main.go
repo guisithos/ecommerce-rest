@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"os"
 
+	"github.com/guisithos/ecommerce-rest/DB"
 	"github.com/guisithos/ecommerce-rest/internals/models"
 )
 
@@ -31,7 +32,7 @@ func main() {
 		fmt.Printf("DSN: %s\n", dsn)
 	}
 
-	db, err := database.ConnectPostgres(dsn)
+	db, err := DB.ConnectPostgres(dsn)
 	if err != nil {
 		log.Fatal("Cannot connect to database")
 	}
