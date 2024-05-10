@@ -1,10 +1,12 @@
-package main
+package util
 
 import (
 	"encoding/json"
 	"errors"
 	"io"
 	"net/http"
+
+	_ "github.com/guisithos/ecommerce-rest/api"
 )
 
 func (app *application) readJSON(w http.ResponseWriter, r *http.Request, data interface{}) error {

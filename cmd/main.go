@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/guisithos/ecommerce-rest/DB"
-	"github.com/guisithos/ecommerce-rest/internals/models"
+	"github.com/guisithos/ecommerce-rest/internal/models"
 )
 
 type config struct {
@@ -15,32 +15,39 @@ type config struct {
 }
 
 type application struct {
-	config config
-	models models.Models
+	config   config
+	models   models.Models
+	infoLog  *log.Logger
+	errorLog *log.Logger
 }
 
 func main() {
 
 	var cfg config
-	cfg.port = 9090
+	cfg.port = 8080
 
 	var dsn string
 
+	infoLog := log.New(os.Stdout, "INFO\t", log.Ldate|log.Ltime)
+	errorLog := log.New(os.Stdout, "ERROR\t", log.Ldate|log.Ltime|log.Lshortfile)
+
 	if dsn = os.Getenv("DSN"); dsn == "" {
-		fmt.Println("Not defined")
+		fmt.Println("DSN not defined.")
 	} else {
 		fmt.Printf("DSN: %s\n", dsn)
 	}
 
 	db, err := DB.ConnectPostgres(dsn)
 	if err != nil {
-		log.Fatal("Cannot connect to database")
+		log.Fatal("Connection failed")
 	}
 	defer db.SQL.Close()
 
 	app := &application{
-		config: cfg,
-		models: models.New(db.SQL),
+		config:   cfg,
+		infoLog:  infoLog,
+		errorLog: errorLog,
+		models:   models.New(db.SQL),
 	}
 
 	err = app.serve()
@@ -51,7 +58,7 @@ func main() {
 }
 
 func (app *application) serve() error {
-	app.infoLog.Println("API listening on port", app.config.port)
+	app.infoLog.Println("port", app.config.port)
 
 	srv := &http.Server{
 		Addr:    fmt.Sprintf(":%d", app.config.port),

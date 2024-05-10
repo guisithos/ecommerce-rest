@@ -5,8 +5,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/go-chi/chi"
 	"github.com/guisithos/ecommerce-rest/internals/models"
+
+	"github.com/go-chi/chi"
 )
 
 type jsonResponse struct {
