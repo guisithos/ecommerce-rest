@@ -5,8 +5,6 @@ import (
 	"errors"
 	"io"
 	"net/http"
-
-	_ "github.com/guisithos/ecommerce-rest/api"
 )
 
 func (app *application) readJSON(w http.ResponseWriter, r *http.Request, data interface{}) error {
@@ -22,7 +20,7 @@ func (app *application) readJSON(w http.ResponseWriter, r *http.Request, data in
 
 	err = dec.Decode(&struct{}{})
 	if err != io.EOF {
-		return errors.New("Body must have only one JSON value.")
+		return errors.New("body must have only one JSON value")
 	}
 
 	return nil

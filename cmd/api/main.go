@@ -7,7 +7,7 @@ import (
 	"os"
 
 	"github.com/guisithos/ecommerce-rest/DB"
-	"github.com/guisithos/ecommerce-rest/internal/models"
+	"github.com/guisithos/ecommerce-rest/internals/models"
 )
 
 type config struct {

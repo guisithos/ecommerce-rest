@@ -1,4 +1,4 @@
-package api
+package main
 
 import (
 	"net/http"
@@ -6,6 +6,7 @@ import (
 	"time"
 
 	"github.com/guisithos/ecommerce-rest/internals/models"
+	_ "github.com/guisithos/ecommerce-rest/util"
 
 	"github.com/go-chi/chi"
 )

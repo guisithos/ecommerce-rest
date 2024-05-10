@@ -24,12 +24,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/wines",
+							"raw": "http://localhost:8080/wines",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "8080",
 							"path": [
 								"wines"
 							]
@@ -43,12 +43,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/wines/get/69",
+							"raw": "http://localhost:8080/wines/get/69",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "8080",
 							"path": [
 								"wines",
 								"get",
@@ -73,12 +73,12 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:9090/wines/update/69",
+							"raw": "http://localhost:8080/wines/update/69",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "8080",
 							"path": [
 								"wines",
 								"update",
@@ -94,12 +94,12 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/wines/all",
+							"raw": "http://localhost:8080/wines/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "8080",
 							"path": [
 								"wines",
 								"all"
@@ -114,12 +114,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:9090/wines/delete/69",
+							"raw": "http://localhost:8080/wines/delete/69",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
-							"port": "9090",
+							"port": "8080",
 							"path": [
 								"wines",
 								"delete",
